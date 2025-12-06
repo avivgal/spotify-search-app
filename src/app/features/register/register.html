@@ -1,0 +1,31 @@
+<div class="register-wrapper">
+  <h1>Register</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+    <!-- Email -->
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="Enter your email" />
+
+    @if (email?.touched && email?.invalid) {
+    <p class="error">Please enter a valid email address.</p>
+    }
+
+    <!-- Username -->
+    <label>Username</label>
+    <input type="text" formControlName="username" placeholder="Pick a username" />
+
+    @if (username?.touched && username?.invalid) {
+    <p class="error">Username must start with a letter and contain only letters and numbers.</p>
+    }
+
+    <!-- Password -->
+    <label>Password</label>
+    <input type="password" formControlName="password" placeholder="Choose a password" />
+
+    @if (password?.touched && password?.invalid) {
+    <p class="error">Password must include at least 1 uppercase letter, 1 number, and no spaces.</p>
+    }
+
+    <button type="submit">Register</button>
+  </form>
+</div>

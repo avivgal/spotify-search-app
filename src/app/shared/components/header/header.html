@@ -1,0 +1,13 @@
+<header class="header">
+  <div class="left">
+    <a routerLink="/home" routerLinkActive="active">
+      <img src="assets/spotify-logo.png" class="logo" alt="Spotify" />
+    </a>
+  </div>
+
+  <div class="right">
+    @if (auth.isLoggedIn()) {
+    <button class="logout-btn" (click)="logout()">Logout</button>
+    }
+  </div>
+</header>

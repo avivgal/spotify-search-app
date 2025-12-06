@@ -1,0 +1,39 @@
+<a routerLink="/" class="back-button" role="button">← Back</a>
+
+<div class="disc-details">
+  @if (loading()) {
+  <div class="state state--loading">Loading disc details…</div>
+  } @else if (error()) {
+  <div class="state state--error">{{ error() }}</div>
+  } @else if (album(); as a) {
+  <div class="layout">
+    <div class="left">
+      <img class="cover" [src]="a.images?.[0]?.url" [alt]="a.name" />
+    </div>
+
+    <div class="right">
+      <h1>{{ a.name }}</h1>
+
+      <p class="meta">
+        <span>{{ artists() }}</span>
+        <span>•</span>
+        <span>{{ a.release_date }}</span>
+      </p>
+
+      @if (a.tracks?.items?.length) {
+      <h2>Tracks</h2>
+      <ol class="tracks">
+        @for (track of a.tracks?.items ?? []; track track.id) {
+        <li class="track">
+          <span class="track__number">{{ track.track_number }}.</span>
+          <span class="track__name">{{ track.name }}</span>
+        </li>
+        }
+      </ol>
+      } @else {
+      <p class="no-tracks">No tracks information available.</p>
+      }
+    </div>
+  </div>
+  }
+</div>

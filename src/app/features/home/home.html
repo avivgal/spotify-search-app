@@ -1,0 +1,44 @@
+<!-- Search Input -->
+<div class="search-wrapper">
+  <input
+    id="search-input"
+    type="text"
+    placeholder="Search albums…"
+    #term
+    (input)="onTermChanged($event.target.value)"
+  />
+
+  @if (searchHistory().length > 0) {
+  <div class="history">
+    @for (item of searchHistory(); track item) {
+    <button
+      class="history-btn"
+      [class.active]="selectedHistoryTerm() === item"
+      (click)="selectHistoryTerm(item)"
+    >
+      {{ item }}
+    </button>
+    }
+  </div>
+  }
+</div>
+
+@if (errorMessage()) {
+<div class="error-box">{{ errorMessage() }}</div>
+}
+
+<!-- No Results -->
+@if (results().length === 0 && lastTerm().length > 0 && !loading()) {
+<div class="no-results">No results found</div>
+}
+
+<!-- Album Results Grid -->
+<div class="results">
+  @for (album of results(); track album.id) {
+  <app-disc-item [album]="album" />
+  }
+</div>
+
+@if (isLoadingMore()) {
+<div class="loading-more">Loading more albums…</div>
+}
