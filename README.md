@@ -1,7 +1,6 @@
 # 🎵 Angular Spotify Album Browser
 
-A lightweight Angular application that allows users to search and browse albums using the Spotify Web API.  
-This project demonstrates strong frontend skills including Angular Standalone Components, Signals, Guards, Infinite Scroll, and clean architecture patterns.
+A lightweight Angular application that allows users to search and browse albums using the Spotify Web API.
 
 ---
 
@@ -112,21 +111,3 @@ The app will be available at:
 ```
 http://localhost:4200
 ```
-
----
-
-## 📸 Screenshots (Optional)
-
-_Add UI screenshots here for extra polish._
-
----
-
-## 📄 License
-
-Open-source — feel free to use as a reference.
-
----
-
-# ⭐️ Feedback
-
-If you’d like code review or suggestions for improving the assignment, feel free to ask!
