@@ -1,78 +1,132 @@
-\*\*Angular Spotify Album Browser
+# 🎵 Angular Spotify Album Browser
 
-A lightweight Angular application that allows users to search for albums using the Spotify Web API, view album details, and enjoy a smooth infinite-scroll browsing experience.
+A lightweight Angular application that allows users to search and browse albums using the Spotify Web API.  
+This project demonstrates strong frontend skills including Angular Standalone Components, Signals, Guards, Infinite Scroll, and clean architecture patterns.
 
-This project was completed as a home assignment and demonstrates strong Angular skills including:
+---
 
-    -Angular Standalone Components
+## 🚀 Features
 
-    -Signals
+### 🔍 Album Search
 
-    -Infinite Scroll
+- Search albums in real time with **debounced API calls**
+- Displays results instantly using **Angular Signals**
 
-    -Reactive Forms
+### ♾️ Infinite Scroll
 
-    -Route Guards
+Keep scrolling — more albums load automatically (offset-based pagination to simulate real-world API behavior).
 
-    -Async API integration
+### 💿 Album Details Page
 
-    -Clean architecture patterns
+Each album page includes:
 
-\*\* Features
--Album Search
+- Cover image
+- Artists
+- Release date
+- Full track list
 
-Search any album using the Spotify API with real-time debounce.
+### 🔐 Simple Authentication Flow
 
-    Infinite Scroll
+Mock login/register form with:
 
-Scroll down and albums keep loading — just like Facebook / Instagram feeds.
+- Reactive Forms
+- Validation
+- Client-side route guard
 
-    Album Details
+### 📱 Fully Responsive
 
-Clicking an album opens a detailed page with:
+Works smoothly on **mobile, tablet, and desktop** using CSS grid + responsive layout.
 
-    -Cover image
+---
 
-    -Artists
+## 🛠 Tech Stack
 
-    -Release date
+- **Angular 17+** (Standalone Components)
+- **Signals**
+- **RxJS**
+- **Angular Router**
+- **Spotify Web API**
+- **SCSS / Responsive CSS**
 
-    -Full track list
+---
 
-\*\*Simple Authentication Flow
+## 📂 Project Structure (Highlights)
 
-Includes a register/login mock with validation + client-side guard.
+```
+src/app
+ ├─ features/
+ │   ├─ home/
+ │   ├─ disc-details/
+ │   └─ register/
+ ├─ services/
+ │   ├─ spotify.ts
+ │   ├─ auth.ts
+ │   └─ storage.ts
+ ├─ guards/auth.guard.ts
+ ├─ models/album.ts
+ └─ shared/components/
+     ├─ disc-item/
+     └─ header/
+```
 
-\*\*Fully Responsive
+---
 
-Works on mobile, tablet, and desktop.
-
-\*\*Tech Stack
-
-    -Angular 17+ Standalone Components
-
-    -Signals
-
-    -RxJS
-
-    -Spotify Web API
-
-    -Angular Router
-
-    -CSS grid + responsive layout
-
-******\*\*\*\******* Environment Setup ******\*\*\*\*******
+## 🔧 Environment Setup
 
 Before running the project, create:
 
+```
 src/app/environments/environment.ts
+```
 
-Copy the content of environment.example.ts and fill in your Spotify API credentials:
+Inside it, add the following:
 
+```ts
 export const environment = {
-spotifyClientId: '',
-spotifyClientSecret: '',
+  spotifyClientId: '',
+  spotifyClientSecret: '',
 };
+```
 
-Do NOT commit your real environment file.
-The .gitignore already prevents this.
+👉 **Important:** Never commit your real keys.  
+A template file `environment.example.ts` is provided.
+
+---
+
+## ▶️ Running the App
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run the dev server:
+
+```
+ng serve
+```
+
+The app will be available at:
+
+```
+http://localhost:4200
+```
+
+---
+
+## 📸 Screenshots (Optional)
+
+_Add UI screenshots here for extra polish._
+
+---
+
+## 📄 License
+
+Open-source — feel free to use as a reference.
+
+---
+
+# ⭐️ Feedback
+
+If you’d like code review or suggestions for improving the assignment, feel free to ask!
